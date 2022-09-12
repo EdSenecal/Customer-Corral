@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Corral</title>
+    <link rel="stylesheet" href="/w3css/4/w3.css">
+    <html>
+    
+    <style>
+    .w3-half {height:280px;padding-top:16px}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <h1>Customer Corral &trade; </h1>
+        </div>
+        <div class="info">
+            <h3> {{user.company}}</h1>
+            <a href="/dashboard">dashboard</a>
+            <a href="/logout">log out and continue your search</a>
+        </div>
+    </div>
+    <form action="/customer/update" method="post" class="col-6 mx-auto">
+        <h2 class="text-center">edit this customer</h2>
+        <div class="form-group">
+            <input type="hidden" name="id" value="{{customer.id}}">
+            <label for="first_name"> first_name</label>
+            <input type="text" class="form-control"name="first_name" value="{{customer.first_name}}">
+            
+            <label for="last_name"> last_name</label>
+            <input type="text" class="form-control"name="last_name" value="{{customer.last_name}}">
+            
+            <label for="email"> last_name</label>
+            <input type="email" class="form-control"name="email" value="{{customer.email}}">
+            
+        </div>
+        <button>hogtie!</button>
+    </form>
+
+</div>
+</body>
+</html>

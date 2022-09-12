@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
+    <link rel="stylesheet" href="/w3css/4/w3.css">
+    <html>
+    
+    <style>
+    .w3-half {height:280px;padding-top:16px}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="title">
+            <h1>Customer Corral &trade;</h1>
+        </div>
+        <div class="info">
+            <h3> {{user.company}}</h1>
+            <a href="/dashboard">dashboard</a>
+            <a href="/logout">log out</a>
+        </div>
+    </div>
+    <div class="container" style="display: flex; justify-content: center; align-items:center;flex-direction:column">
+        <h2>{{ customer.first_name }}  {{ customer.last_name}}</h2>
+        <div class="body">
+            <h3>email</h3>
+            <p> Email: {{ customer.email }}</p>
+        
+        </div>
+    </div>
+</body>
+</html>

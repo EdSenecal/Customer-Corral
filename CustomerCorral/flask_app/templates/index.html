@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Corral</title>
+    <link rel="stylesheet" href="/w3css/4/w3.css">
+    <html>
+    
+    <style>
+    .w3-half {height:280px;padding-top:16px}
+    </style>
+    
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<div class="container"></div>
+    <h1>Howdy Partners! You ready to wrastle up some buisness?!</h1>
+    <div class="containter" style="display: flex; ;justify-content: space-around;">
+        <div class="left">
+            <h1>Register Here</h1>
+            <form action="/register" method="POST">
+                
+                {% with messages = get_flashed_messages() %}<!-- declare a variable called messages -->
+                    {% if messages %}<!-- check if there are any messages -->
+                        {% for message in messages %}<!-- loop through the messages -->
+                            <p>{{message}}</p><!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div>
+                    <label for="">First Name</label>
+                    <input type="text" name="first_name">
+                </div>
+                <div>
+                    <label for="">Last Name</label>
+                    <input type="text" name="last_name">
+                </div>
+                <div>
+                    <label for="">email</label>
+                    <input type="text" name="email">
+                </div>
+                <div>
+                    <label for="">password</label>
+                    <input type="password" name="password">
+                </div>
+                <div>
+                    <label for="confirm">confirm password</label>
+                    <input type="password" name="confirm">
+                </div>
+                <div>
+                    <label for="">company</label>
+                    <input type="text" name="company">
+                </div>
+                <button>register</button>
+            </form>
+        </div>
+        <div class="right">
+            <h2>Already a user?  Login</h2>
+            <form action="/login" method="POST">
+                <div>
+                    <label for="">email</label>
+                    <input type="text" name="email">
+                </div>
+                <div>
+                    <label for="">password</label>
+                    <input type="password" name="password">
+                </div>
+                <button>Log in</button>
+                {%with messages = get_flashed_messages(category_filter=['login'])%}
+                    {%if messages%}
+                    <div class="alert alert-danger" role = "alert">
+                        <strong> flash ahhhhhhh</strong>
+                        {% for message in messages%}
+                            <p>{{message}}</p>
+                        {%endfor%}
+                    </div>
+                {%endif%}
+            {%endwith%}
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
